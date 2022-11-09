@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: datran <datran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 10:49:54 by datran            #+#    #+#             */
-/*   Updated: 2022/11/09 14:02:12 by datran           ###   ########.fr       */
+/*   Created: 2022/11/09 15:32:24 by datran            #+#    #+#             */
+/*   Updated: 2022/11/09 15:45:18 by datran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+int	ft_atoi(const char *nptr)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	while (*nptr && *nptr >= 9 && *nptr <= 13 || *nptr == 32)
+		nptr++;
 }
