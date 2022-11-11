@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: datran <datran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 10:09:23 by datran            #+#    #+#             */
-/*   Updated: 2022/11/10 10:12:57 by datran           ###   ########.fr       */
+/*   Created: 2022/11/10 11:05:25 by datran            #+#    #+#             */
+/*   Updated: 2022/11/10 11:50:25 by datran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	if ('0' <= c && c <= '9')
-		return (1);
-	return (0);
+	size_t	i;
+	char	*sub;
+
+	sub = (char *)malloc(len + 1);
+	if (!s || !sub)
+		return (NULL);
+	if ((size_t)start >= ft_strlen(s) || !ft_strlcpy(sub, s + start, len + 1))
+		*sub = 0;
+	return (sub);
 }
