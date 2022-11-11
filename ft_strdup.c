@@ -6,13 +6,13 @@
 /*   By: datran <datran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 10:39:40 by datran            #+#    #+#             */
-/*   Updated: 2022/11/10 10:55:42 by datran           ###   ########.fr       */
+/*   Updated: 2022/11/11 13:37:00 by datran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
 	size_t	len;
 	char	*copy;

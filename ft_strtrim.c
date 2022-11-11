@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: datran <datran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 11:52:31 by datran            #+#    #+#             */
-/*   Updated: 2022/11/11 11:16:55 by datran           ###   ########.fr       */
+/*   Created: 2022/11/11 11:20:40 by datran            #+#    #+#             */
+/*   Updated: 2022/11/11 12:05:36 by datran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	len_s1;
-	size_t	len_s2;
-	char	*join;
+	size_t	i;
+	size_t	j;
 
-	if (!s1 || !s2)
-		return (NULL);
-	join = (char *)malloc(len_s1 + len_s2 + 1);
-	if (!join)
-		return (NULL);
-	ft_strlcpy(join, s1, len_s1 + 1);
-	ft_strlcpy(join + len_s1, s2, len_s2 + 1);
-	return (join);
+	i = 0;
+	j = ft_strlen(s1) - 1;
+	while (ft_strchr(set, s1[i]))
+		i++;
+	while (j && ft_strchr(set, s1[j]))
+		j--;
+	if (j >= i)
+		return (ft_substr(s1, i, j - i + 1));
+	return (NULL);
 }
