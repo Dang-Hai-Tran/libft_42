@@ -6,7 +6,7 @@
 /*   By: datran <datran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 15:53:32 by datran            #+#    #+#             */
-/*   Updated: 2022/11/11 16:46:04 by datran           ###   ########.fr       */
+/*   Updated: 2022/11/13 09:20:05 by datran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ char	*ft_itoa(int n)
 	str = malloc(len + 1);
 	if (!str)
 		return (NULL);
-	str[len] = 0;
 	if (n < 0)
 	{
 		str[0] = '-';
@@ -53,5 +52,6 @@ char	*ft_itoa(int n)
 		n = n / 10;
 		len--;
 	}
+	str[len] = 0;
 	return (str);
 }
