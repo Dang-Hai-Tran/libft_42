@@ -6,7 +6,7 @@
 /*   By: datran <datran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 10:38:20 by datran            #+#    #+#             */
-/*   Updated: 2022/11/13 11:01:01 by datran           ###   ########.fr       */
+/*   Updated: 2022/11/14 22:05:35 by datran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
+	unsigned int	i;
 
 	i = 0;
-	while (*s)
+	while (s[i] != '\0')
 	{
-		f(i, s);
+		f(i, s + i);
 		i++;
-		s++;
 	}
 }

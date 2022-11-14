@@ -6,52 +6,54 @@
 /*   By: datran <datran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 15:53:32 by datran            #+#    #+#             */
-/*   Updated: 2022/11/13 09:20:05 by datran           ###   ########.fr       */
+/*   Updated: 2022/11/14 22:35:14 by datran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	count_len(int n)
+static unsigned int	ft_number_size(int n)
 {
-	size_t	len;
+	unsigned int	length;
 
-	len = 0;
-	if (n <= 0)
+	length = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+		length += 1;
+	while (n != 0)
 	{
-		n *= -1;
-		len += 1;
+		n /= 10;
+		length++;
 	}
-	while (n > 0)
-	{
-		len += 1;
-		n = n / 10;
-	}
-	return (len);
+	return (length);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	size_t	len;
+	char			*str;
+	unsigned int	nb;
+	unsigned int	len;
 
-	len = count_len(n);
-	str = malloc(len + 1);
+	len = ft_number_size(n);
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
 	if (n < 0)
 	{
 		str[0] = '-';
-		n *= -1;
+		nb = -n;
 	}
-	if (n == 0)
+	else
+		nb = n;
+	if (nb == 0)
 		str[0] = '0';
-	while (n > 0)
+	str[len] = 0;
+	while (nb)
 	{
-		str[len - 1] = n % 10 + 48;
-		n = n / 10;
+		str[len - 1] = (nb % 10) + 48;
+		nb /= 10;
 		len--;
 	}
-	str[len] = 0;
 	return (str);
 }

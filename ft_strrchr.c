@@ -6,7 +6,7 @@
 /*   By: datran <datran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 10:18:07 by datran            #+#    #+#             */
-/*   Updated: 2022/11/14 18:34:34 by datran           ###   ########.fr       */
+/*   Updated: 2022/11/14 21:54:00 by datran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
+	int		i;
 
-	i = 0;
-	while (i < ft_strlen(s))
+	i = ft_strlen(s);
+	if (c == 0)
+		return ((char *)s + i);
+	while (i >= 0)
 	{
-		if (s[i] == (char)c)
+		if (s[i] == c)
 			return ((char *)s + i);
+		i--;
 	}
 	return (NULL);
 }

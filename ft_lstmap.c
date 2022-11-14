@@ -6,7 +6,7 @@
 /*   By: datran <datran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 11:19:45 by datran            #+#    #+#             */
-/*   Updated: 2022/11/14 13:15:58 by datran           ###   ########.fr       */
+/*   Updated: 2022/11/14 22:45:54 by datran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new;
-	t_list	*tmp;
+	t_list		*new;
+	t_list		*tmp_new;
+	t_list		*tmp_lst;
 
-	if (!lst || !f || !del)
+	new = ft_lstnew((*f)(lst->content));
+	if (!lst || !new)
 		return (NULL);
-	new = ft_lstnew(f(lst->content));
-	if (!new)
-		return (NULL);
-	while (lst)
+	tmp_new = new;
+	tmp_lst = lst->next;
+	while (tmp_lst)
 	{
-		lst = lst->next;
-		tmp = ft_lstnew(f(lst->content));
-		if (!tmp)
+		tmp_new->next = ft_lstnew((*f)(tmp_lst->content));
+		if (!tmp_new->next)
 		{
-			ft_lstclear(&tmp, del);
+			ft_lstclear(&new, del);
 			return (NULL);
 		}
-		new->next = tmp;
-		new = tmp;
+		tmp_new = tmp_new->next;
+		tmp_lst = tmp_lst->next;
 	}
 	return (new);
 }
