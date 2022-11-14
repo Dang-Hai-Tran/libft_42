@@ -6,7 +6,7 @@
 /*   By: datran <datran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:09:56 by datran            #+#    #+#             */
-/*   Updated: 2022/11/14 21:47:34 by datran           ###   ########.fr       */
+/*   Updated: 2022/11/14 23:29:41 by datran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		j++;
 	}
 	if (i < size)
-		dest[i + j] = '\0';
+		dest[i + j] = 0;
 	return (i + ft_strlen(src));
 }

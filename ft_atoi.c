@@ -6,31 +6,31 @@
 /*   By: datran <datran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:32:24 by datran            #+#    #+#             */
-/*   Updated: 2022/11/10 10:16:43 by datran           ###   ########.fr       */
+/*   Updated: 2022/11/14 22:54:25 by datran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *str)
 {
 	int			sign;
 	long long	res;
 
 	sign = 1;
 	res = 0;
-	while ((*nptr >= 9 && *nptr <= 13) || *nptr == 32)
-		nptr++;
-	if (*nptr == '-' || *nptr == '+')
+	while ((*str >= 9 && *str <= 13) || *str == 32)
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		if (*nptr == '-')
+		if (*str == '-')
 			sign = -1;
-		nptr++;
+		str++;
 	}
-	while (ft_isdigit(*nptr))
+	while (ft_isdigit(*str))
 	{
-		res = res * 10 + (*nptr - '0');
-		nptr++;
+		res = res * 10 + (*str - '0');
+		str++;
 	}
 	return (res * sign);
 }

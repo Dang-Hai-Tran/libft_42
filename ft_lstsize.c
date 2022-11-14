@@ -6,7 +6,7 @@
 /*   By: datran <datran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 12:12:39 by datran            #+#    #+#             */
-/*   Updated: 2022/11/14 18:12:49 by datran           ###   ########.fr       */
+/*   Updated: 2022/11/14 23:35:45 by datran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 int	ft_lstsize(t_list *lst)
 {
 	size_t	i;
+	t_list	*tmp;
 
 	i = 0;
-	while (lst)
+	tmp = lst;
+	while (tmp)
 	{
 		i++;
-		lst = lst->next;
+		tmp = tmp->next;
 	}
 	return (i);
 }

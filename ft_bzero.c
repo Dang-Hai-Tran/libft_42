@@ -6,7 +6,7 @@
 /*   By: datran <datran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 11:55:55 by datran            #+#    #+#             */
-/*   Updated: 2022/11/08 13:30:00 by datran           ###   ########.fr       */
+/*   Updated: 2022/11/14 22:55:37 by datran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 void	ft_bzero(void *str, size_t n)
 {
-	if (n)
-		ft_memset(str, 0, n);
+	ft_memset(str, 0, n);
 }
