@@ -6,7 +6,7 @@
 /*   By: datran <datran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:09:56 by datran            #+#    #+#             */
-/*   Updated: 2022/11/08 21:52:04 by datran           ###   ########.fr       */
+/*   Updated: 2022/11/14 13:23:38 by datran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	while (dst[i])
 		i++;
 	while (src[j] && i < dstsize - 1)
-		dst[i++] = src[j++];
+	{
+		dst[i] = src[j];
+		i++;
+		j++;
+	}
 	dst[i] = 0;
 	return (len);
 }

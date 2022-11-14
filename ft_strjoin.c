@@ -6,7 +6,7 @@
 /*   By: datran <datran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 11:52:31 by datran            #+#    #+#             */
-/*   Updated: 2022/11/11 11:16:55 by datran           ###   ########.fr       */
+/*   Updated: 2022/11/14 13:25:29 by datran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 || !s2)
 		return (NULL);
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
 	join = (char *)malloc(len_s1 + len_s2 + 1);
 	if (!join)
 		return (NULL);

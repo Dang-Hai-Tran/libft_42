@@ -6,7 +6,7 @@
 /*   By: datran <datran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 12:17:21 by datran            #+#    #+#             */
-/*   Updated: 2022/11/13 23:45:38 by datran           ###   ########.fr       */
+/*   Updated: 2022/11/14 10:45:18 by datran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*tmp;
 
-	tmp = ft_lstlast()
-	
+	if (!lst || !new)
+		return ;
+	if (! *lst)
+		*lst = new;
+	else
+	{
+		tmp = ft_lstlast(*lst);
+		tmp->next = new;
+	}
 }

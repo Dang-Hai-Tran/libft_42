@@ -6,7 +6,7 @@
 /*   By: datran <datran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 12:23:13 by datran            #+#    #+#             */
-/*   Updated: 2022/11/13 12:30:37 by datran           ###   ########.fr       */
+/*   Updated: 2022/11/14 18:12:06 by datran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	while (!lst && lst->next)
-		lst = lst->next;
-	return (lst);
+	t_list	*tmp;
+
+	tmp = lst;
+	while (tmp->next)
+		tmp = tmp->next;
+	return (tmp);
 }

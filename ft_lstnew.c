@@ -6,7 +6,7 @@
 /*   By: datran <datran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 11:54:31 by datran            #+#    #+#             */
-/*   Updated: 2022/11/13 12:01:55 by datran           ###   ########.fr       */
+/*   Updated: 2022/11/14 11:52:52 by datran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*tmp;
-	
+
 	tmp = (t_list *)malloc(sizeof(t_list));
 	if (!tmp)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: datran <datran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 11:05:25 by datran            #+#    #+#             */
-/*   Updated: 2022/11/10 11:50:25 by datran           ###   ########.fr       */
+/*   Updated: 2022/11/14 13:23:04 by datran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
 	char	*sub;
 
 	sub = (char *)malloc(len + 1);
